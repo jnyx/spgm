@@ -12,9 +12,11 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ClipData.Item;
 import android.content.Context;
+import android.database.Cursor;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -30,6 +32,7 @@ MenuItem item;
 		mapa = new Mapa(((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap(),(LocationManager) getSystemService(Context.LOCATION_SERVICE));
 		this.openHelper = openHelper;
 		openHelper.open();
+		
 	}
 	
 	
@@ -41,6 +44,18 @@ MenuItem item;
 			openHelper.insertar(mapa.getPolyline().getPoints().get(0).latitude, mapa.getPolyline().getPoints().get(0).longitude, mapa.getPolyline().getPoints().get(1).latitude,mapa.getPolyline().getPoints().get(1).longitude,mapa.getPolyline().getColor() );
 			return true;
 		}
+		
+		
+		if(item.getItemId() == R.id.cargar){
+			Cursor fila = openHelper.getCoordenadas("1");
+			if(fila.moveToNext()){
+				Toast.makeText(this, fila.getString(1), Toast.LENGTH_SHORT).show();
+			}
+			else
+				Toast.makeText(this, "hubo un error", Toast.LENGTH_SHORT).show();
+			return true;
+		}
+		
 		return super.onMenuItemSelected(featureId, item);	
 	}
 	

@@ -193,8 +193,8 @@ public class BDHelper extends SQLiteOpenHelper {
 		}
 		
 		
-		public Cursor getCoordenadas(){
-			return myDataBase.rawQuery("select * from " + TABLE_NAME, null);
+		public Cursor getCoordenadas(String id){
+			return myDataBase.rawQuery("select * from " + TABLE_NAME + " where _id= " + id, null);
 		}
 		 
 		

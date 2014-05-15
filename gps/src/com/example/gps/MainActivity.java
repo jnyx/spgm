@@ -49,7 +49,9 @@ MenuItem item;
 		if(item.getItemId() == R.id.cargar){
 			Cursor fila = openHelper.getCoordenadas("1");
 			if(fila.moveToNext()){
-				Toast.makeText(this, fila.getString(1), Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, fila.getString(4), Toast.LENGTH_SHORT).show();
+			    mapa.setPolyline(fila.getDouble(1), fila.getDouble(2), fila.getDouble(3), fila.getDouble(4), fila.getInt(5));
+			    
 			}
 			else
 				Toast.makeText(this, "hubo un error", Toast.LENGTH_SHORT).show();

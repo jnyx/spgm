@@ -1,5 +1,7 @@
 package com.example.gps;
 
+import java.util.List;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
@@ -179,6 +181,16 @@ public class Mapa implements OnMapClickListener, OnMapLongClickListener, OnMarke
 			   markerClicked = true;
 			  }
 		return true;
+	}
+	
+	public void setPolyline(double lati,double longi,double latf,double longf,int color){
+		polylineOptions = new PolylineOptions();
+		polylineOptions.add(new LatLng(lati,longi),new LatLng(latf,longf));
+		polylineOptions.color(color);
+		
+	    map.addPolyline(polylineOptions);
+		
+		
 	}
 	
 	public Polyline getPolyline(){

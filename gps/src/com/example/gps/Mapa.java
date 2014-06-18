@@ -1,13 +1,17 @@
 package com.example.gps;
 
-import java.util.List;
 
+
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
-import android.database.sqlite.SQLiteOpenHelper;
+import android.content.Intent;
 import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -23,71 +27,108 @@ import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.VisibleRegion;
 
-public class Mapa implements OnMapClickListener, OnMapLongClickListener, OnMarkerClickListener {
-	private GoogleMap map;
+
+
+public class Mapa extends Activity implements OnMapClickListener, OnMapLongClickListener, OnMarkerClickListener {
+	public static GoogleMap map=null;
+	Mapa mapa=null;
 	Marker marker = null;
 	boolean markerClicked;
 	PolygonOptions polygonOptions;
 	Polygon polygon;
     PolylineOptions polylineOptions;
     Polyline polyLine;
-   
+    boolean band = true;
+	
+	
     
     
-	public Mapa(GoogleMap map, LocationManager location) {
-		// TODO Auto-generated constructor stub
-		this.map = map;
-		
-		
+    
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	@SuppressLint("NewApi")
+	protected void onCreate(Bundle savedInstanceState){
+	    
+		super.onCreate(savedInstanceState);
+		onTrimMemory(TRIM_MEMORY_RUNNING_LOW);
+	}
+	
+	
+	
+	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	@SuppressLint("NewApi")
+	@Override
+	public void onTrimMemory(int level) {
+		// TODO Auto-generated method stub
+		super.onTrimMemory(level);
+		LocationManager location;
+		setContentView(R.layout.mapa);
+		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+		location = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		setUpMap(location);
 	}
 
-	private void setUpMap(LocationManager locationManager) {
+
+
+	
+
+
+	public static GoogleMap getMapa(){
+		return map;
+		
+	}
+
+	public void setUpMap(LocationManager locationManager) {
 		// TODO Auto-generated method stub
-		map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+		map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 		map.setMyLocationEnabled(true);
 		
 	    map.setOnMapClickListener(this);
 	    map.setOnMapLongClickListener(this);
 	    map.setOnMarkerClickListener(this);
 	    markerClicked = false;
-	    
+	    mapa = this;
 		LocationListener locationListener = new LocationListener(){
 
 			@Override
 			public void onLocationChanged(Location myLocation) {
 				// TODO Auto-generated method stub
 			    	
-				double latitude = myLocation.getLatitude();
-			
-				double longitude = myLocation.getLongitude();
+				if(myLocation!=null){
 				
+					double latitude = myLocation.getLatitude();
 				
-				/*GroundOverlayOptions imagen = new GroundOverlayOptions();
-				
-				imagen.image(BitmapDescriptorFactory.fromResource(R.drawable.next));
-				
-				imagen.position(latLng,10f,20f);
-				
-				map.addGroundOverlay(imagen);
-				*/
-				
-				if(marker != null){
-					marker.remove();
-				}
-				
-				LatLng latLng = new LatLng(latitude,longitude);
-				
-				map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-				
-				map.animateCamera(CameraUpdateFactory.zoomTo(20));
-				
-				
-				marker = map.addMarker(new MarkerOptions().position(latLng));
-				marker.setTitle("Tu estas aqui");
-				
-			   
+					double longitude = myLocation.getLongitude();
+					
+					
+					/*GroundOverlayOptions imagen = new GroundOverlayOptions();
+					
+					imagen.image(BitmapDescriptorFactory.fromResource(R.drawable.next));
+					
+					imagen.position(latLng,10f,20f);
+					
+					map.addGroundOverlay(imagen);
+					*/
+					
+					if(marker != null){
+						marker.remove();
+					}
+					
+					LatLng latLng = new LatLng(latitude,longitude);
+					
+					map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+					
+					map.animateCamera(CameraUpdateFactory.zoomTo(50));
+					
+					
+					marker = map.addMarker(new MarkerOptions().position(latLng));
+					marker.setTitle("Tu estas aqui");
+					if(band){
+						new Campus(mapa);
+						band=false;
+					}
+				}	
 			}
 
 			@Override
@@ -193,7 +234,17 @@ public class Mapa implements OnMapClickListener, OnMapLongClickListener, OnMarke
 		
 	}
 	
+	public void iniciaCampus(){
+		Intent intent = new Intent(this,Campus.class);
+		startActivity(intent);
+	}
+	
+	
+	
 	public Polyline getPolyline(){
 		return polyLine;
 	}
+	
+	
+	
 }

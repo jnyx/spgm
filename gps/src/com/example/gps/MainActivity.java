@@ -9,14 +9,16 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View.OnKeyListener;
 import android.widget.TabHost;
 import android.widget.Toast;
+
 
 
 public class MainActivity extends TabActivity {
@@ -24,9 +26,11 @@ public class MainActivity extends TabActivity {
 private BDHelper openHelper;
 //private Mapa mapa;
 MenuItem item;
+
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB) @SuppressLint("NewApi") @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		//setContentView(R.layout.activity_main);
 		//BDHelper openHelper = new BDHelper(this);
 		//this.mapa = new Mapa();
@@ -36,8 +40,13 @@ MenuItem item;
 		
 		host.addTab(host.newTabSpec("herramientas").setIndicator("Herramientas").setContent(new Intent(this,Herramientas.class)));
 		host.addTab(host.newTabSpec("mapa").setIndicator("Mapa").setContent(new Intent(this,Mapa.class)));
-		//miHilo();
+	   
+		
+		
 	}
+	
+	
+	
 	
 	
 	/*

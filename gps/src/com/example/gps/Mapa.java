@@ -41,7 +41,7 @@ public class Mapa extends Activity implements OnMapClickListener, OnMapLongClick
     PolylineOptions polylineOptions;
     Polyline polyLine;
     boolean band = true;
-	
+    Location locationOld=null;
 	
     
     
@@ -81,7 +81,7 @@ public class Mapa extends Activity implements OnMapClickListener, OnMapLongClick
 
 	public void setUpMap(LocationManager locationManager) {
 		// TODO Auto-generated method stub
-		map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+		map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 		map.setMyLocationEnabled(true);
 		
 	    map.setOnMapClickListener(this);
@@ -89,27 +89,23 @@ public class Mapa extends Activity implements OnMapClickListener, OnMapLongClick
 	    map.setOnMarkerClickListener(this);
 	    markerClicked = false;
 	    mapa = this;
+	    
+	    map.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(32.5317124,-116.9653299)));
+	    map.animateCamera(CameraUpdateFactory.zoomTo(16));
+	    new Campus(mapa);
 		LocationListener locationListener = new LocationListener(){
 
 			@Override
 			public void onLocationChanged(Location myLocation) {
 				// TODO Auto-generated method stub
-			    	
-				if(myLocation!=null){
+			
+				if(myLocation!=null || locationOld != myLocation){
 				
 					double latitude = myLocation.getLatitude();
-				
+					
 					double longitude = myLocation.getLongitude();
 					
-					
-					/*GroundOverlayOptions imagen = new GroundOverlayOptions();
-					
-					imagen.image(BitmapDescriptorFactory.fromResource(R.drawable.next));
-					
-					imagen.position(latLng,10f,20f);
-					
-					map.addGroundOverlay(imagen);
-					*/
+				
 					
 					if(marker != null){
 						marker.remove();
@@ -119,15 +115,13 @@ public class Mapa extends Activity implements OnMapClickListener, OnMapLongClick
 					
 					map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 					
-					map.animateCamera(CameraUpdateFactory.zoomTo(50));
+					map.animateCamera(CameraUpdateFactory.zoomTo(20));
 					
 					
 					marker = map.addMarker(new MarkerOptions().position(latLng));
 					marker.setTitle("Tu estas aqui");
-					if(band){
-						new Campus(mapa);
-						band=false;
-					}
+					
+				    locationOld = myLocation;
 				}	
 			}
 

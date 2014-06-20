@@ -1,6 +1,8 @@
 package com.example.gps;
 
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 
 
@@ -9,9 +11,11 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.os.Handler;
+import android.widget.Toast;
 
-
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -23,57 +27,48 @@ public class Campus extends Activity{
 	public Campus(Context contexto){
 		miHilo();
 		paquetes=contexto.getApplicationContext().getResources();
+		
 	}
 	
 
 
 
 	public void cargarEdificios(){
-		GroundOverlayOptions imagen = new GroundOverlayOptions();
+		ArrayList<GroundOverlayOptions> overlayList = new ArrayList<GroundOverlayOptions>();
 		
+		Projection proyeccion = Mapa.getMapa().getProjection();
+		Point coor = proyeccion.toScreenLocation(new LatLng(32.532463, -116.964945));
 		
-		imagen.image(BitmapDescriptorFactory.fromBitmap(decodificarPaquete(paquetes,R.drawable.ed15a,65,93)));
-		imagen.position(new LatLng(32.530935,-116.962325),85f,85f);
-		Mapa.getMapa().addGroundOverlay(imagen);
-	
-		imagen.image(BitmapDescriptorFactory.fromBitmap(decodificarPaquete(paquetes,R.drawable.ed6b,134,3)));
-		imagen.position(new LatLng(32.532355,-116.96616),50f,45f);
-		Mapa.getMapa().addGroundOverlay(imagen);
+		System.out.println("x: " + coor.x + "y: " + coor.y);
+		overlayList.add(getImagen(R.drawable.ed2a,229,126,55f,40f,new LatLng(32.531709,-116.96701),0.0f));
 		
-		imagen.image(BitmapDescriptorFactory.fromBitmap(decodificarPaquete(paquetes,R.drawable.ed6c,184,13)));
-		imagen.position(new LatLng(32.532202,-116.96565),40f,25f);
-		Mapa.getMapa().addGroundOverlay(imagen);
+		overlayList.add(getImagen(R.drawable.ed6b,134,3,50f,45f,new LatLng(32.532355,-116.96616),0.0f));
+		overlayList.add(getImagen(R.drawable.ed6c,184,13,40f,25f,new LatLng(32.532202,-116.96565),0.0f));
+		overlayList.add(getImagen(R.drawable.ed6d,144,25,50f,50f,new LatLng(32.532862,-116.965597),0.0f));
+		overlayList.add(getImagen(R.drawable.ed6e,155,64,55f,45f,new LatLng(32.533147,-116.965165),0.0f));
+		overlayList.add(getImagen(R.drawable.ed6gfh,170,63,80f,80f,new LatLng(32.533651,-116.965388),0.0f));
+		overlayList.add(getImagen(R.drawable.ed6i,239,36,45f,45f,new LatLng(32.532795,-116.964795),0.0f));
 		
-		imagen.image(BitmapDescriptorFactory.fromBitmap(decodificarPaquete(paquetes,R.drawable.ed6d,144,25)));
-		imagen.position(new LatLng(32.532862,-116.965597),50f,50f);
-		Mapa.getMapa().addGroundOverlay(imagen);
+		overlayList.add(getImagen(R.drawable.ed9a,209,158,55f,40f,new LatLng(32.532423, -116.963894),0.0f));
+		overlayList.add(getImagen(R.drawable.ed9b,193,142,55f,40f,new LatLng(32.532594, -116.964111),0.0f));
 		
-		imagen.image(BitmapDescriptorFactory.fromBitmap(decodificarPaquete(paquetes,R.drawable.ed6e,155,64)));
-		imagen.position(new LatLng(32.533147,-116.965165),55f,45f);
-		Mapa.getMapa().addGroundOverlay(imagen);
+		overlayList.add(getImagen(R.drawable.ed14c15c,344,129,55f,40f,new LatLng(32.531849, -116.964113),0.0f));
+		overlayList.add(getImagen(R.drawable.ed14g,319,183,55f,40f,new LatLng(32.532463, -116.964945),0.0f));
+		overlayList.add(getImagen(R.drawable.ed14k,139,125,55f,40f,new LatLng(32.532179, -116.964220),0.0f));
+		overlayList.add(getImagen(R.drawable.ed15a,65,93,85f,85f,new LatLng(32.530935,-116.962325),0.0f));
 		
-		imagen.image(BitmapDescriptorFactory.fromBitmap(decodificarPaquete(paquetes,R.drawable.ed6gfh,120,13)));
-		imagen.position(new LatLng(32.533651,-116.965388),80f,80f);
-		Mapa.getMapa().addGroundOverlay(imagen);
-		
-		imagen.image(BitmapDescriptorFactory.fromBitmap(decodificarPaquete(paquetes,R.drawable.ed6i,239,36)));
-		imagen.position(new LatLng(32.532795,-116.964795),45f,45f);
-		Mapa.getMapa().addGroundOverlay(imagen);
-		
-		imagen.image(BitmapDescriptorFactory.fromBitmap(decodificarPaquete(paquetes,R.drawable.ed7e8b,281,186)));
-		imagen.position(new LatLng(32.531935, -116.964580),210f,210f);
-		Mapa.getMapa().addGroundOverlay(imagen);
-		
-		
-		
-		imagen.image(BitmapDescriptorFactory.fromBitmap(decodificarPaquete(paquetes,R.drawable.ed2a,229,126)));
-		imagen.position(new LatLng(32.531709,-116.96701),55f,40f);
-		Mapa.getMapa().addGroundOverlay(imagen);
+		for(int i=0;i<overlayList.size();i++)
+			Mapa.getMapa().addGroundOverlay(overlayList.get(i));
 		
 		
 	}
 	
-	
+	public GroundOverlayOptions getImagen(int id,int dwidth,int dheight,float width,float height,LatLng coordenadas,float grados){
+		GroundOverlayOptions imagen = new GroundOverlayOptions();
+		imagen.image(BitmapDescriptorFactory.fromBitmap(decodificarPaquete(paquetes,id,dwidth,dheight))).bearing(grados);
+		imagen.position(coordenadas,width,height);
+		return imagen;
+	}
 	
 
 	public Bitmap decodificarPaquete(Resources res, int resId,
@@ -128,7 +123,7 @@ public class Campus extends Activity{
 			public void run() {
 				// TODO Auto-generated method stub
 				try{
-					Thread.sleep(20000);
+					Thread.sleep(0000);
 				}
 				catch(InterruptedException e){
 					e.printStackTrace();

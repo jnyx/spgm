@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.TabActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.view.KeyEvent;
@@ -26,11 +27,9 @@ public class MainActivity extends TabActivity {
 private BDHelper openHelper;
 //private Mapa mapa;
 MenuItem item;
-
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB) @SuppressLint("NewApi") @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
 		//setContentView(R.layout.activity_main);
 		//BDHelper openHelper = new BDHelper(this);
 		//this.mapa = new Mapa();
@@ -38,16 +37,10 @@ MenuItem item;
 		//openHelper.open();
 		TabHost host = getTabHost();
 		
-		host.addTab(host.newTabSpec("herramientas").setIndicator("Herramientas").setContent(new Intent(this,Herramientas.class)));
 		host.addTab(host.newTabSpec("mapa").setIndicator("Mapa").setContent(new Intent(this,Mapa.class)));
-	   
-		
+		host.addTab(host.newTabSpec("herramientas").setIndicator("Herramientas").setContent(new Intent(this,Herramientas.class)));
 		
 	}
-	
-	
-	
-	
 	
 	/*
 	public boolean onMenuItemSelected(int featureId,MenuItem item){

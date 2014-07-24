@@ -2,24 +2,33 @@ package com.example.gps;
 
 
 
+
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.GroundOverlay;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -31,7 +40,7 @@ import com.google.android.gms.maps.model.VisibleRegion;
 
 
 
-public class Mapa extends Activity implements OnMapClickListener, OnMapLongClickListener, OnMarkerClickListener {
+public class Mapa extends Activity implements OnMapClickListener, OnMarkerClickListener {
 	public static GoogleMap map=null;
 	Mapa mapa=null;
 	Marker marker = null;
@@ -42,15 +51,19 @@ public class Mapa extends Activity implements OnMapClickListener, OnMapLongClick
     Polyline polyLine;
     boolean band = true;
     Location locationOld=null;
-	
+    GroundOverlay imgOverlay;
     
+    Spinner mSprPlaceType;
     
+    String[] mPlaceType=null;
+    String[] mPlaceTypeName=null;
     
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@SuppressLint("NewApi")
 	protected void onCreate(Bundle savedInstanceState){
 	    
 		super.onCreate(savedInstanceState);
+		 
 		onTrimMemory(TRIM_MEMORY_RUNNING_LOW);
 	}
 	
@@ -67,6 +80,11 @@ public class Mapa extends Activity implements OnMapClickListener, OnMapLongClick
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 		location = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		setUpMap(location);
+		
+				//Convoca los componentes Spinner
+				
+				
+			
 	}
 
 
@@ -84,12 +102,12 @@ public class Mapa extends Activity implements OnMapClickListener, OnMapLongClick
 		map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 		map.setMyLocationEnabled(true);
 		
-	    map.setOnMapClickListener(this);
-	    map.setOnMapLongClickListener(this);
+	   // map.setOnMapClickListener(this);
+		new Ruta();
+	    //map.setOnMapLongClickListener(this);
 	    map.setOnMarkerClickListener(this);
 	    markerClicked = false;
 	    mapa = this;
-	    
 	    map.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(32.5317124,-116.9653299)));
 	    map.animateCamera(CameraUpdateFactory.zoomTo(16));
 	    new Campus(mapa);
@@ -115,7 +133,7 @@ public class Mapa extends Activity implements OnMapClickListener, OnMapLongClick
 					
 					map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 					
-					map.animateCamera(CameraUpdateFactory.zoomTo(20));
+					map.animateCamera(CameraUpdateFactory.zoomTo(17));
 					
 					
 					marker = map.addMarker(new MarkerOptions().position(latLng));
@@ -171,13 +189,35 @@ public class Mapa extends Activity implements OnMapClickListener, OnMapLongClick
 		
 	}
 
-	@Override
+	
+	/* (non-Javadoc)
+	 * @see com.google.android.gms.maps.GoogleMap.OnMapLongClickListener#onMapLongClick(com.google.android.gms.maps.model.LatLng)
+	 */
+	/*@Override
 	public void onMapLongClick(LatLng point) {
 		// TODO Auto-generated method stub
-		 map.addMarker(new MarkerOptions().position(point).title(point.toString()));
-		  
-		 markerClicked = false;
-	}
+		// map.addMarker(new MarkerOptions().position(point).title(point.toString()));
+		
+		
+		
+		if(band){
+			Projection proyeccion = map.getProjection(); 
+			Point coor = proyeccion.toScreenLocation(point);
+			Toast.makeText(this,"x: "+coor.x+"y: "+coor.y+ "Lat: "+point.latitude+"Long: "+point.longitude, Toast.LENGTH_LONG).show();
+			System.out.println("x: "+coor.x+"y: "+coor.y+ "Lat: "+point.latitude+"Long: "+point.longitude);
+			GroundOverlayOptions gOverlay = new GroundOverlayOptions();
+			gOverlay.image(BitmapDescriptorFactory.fromResource(R.drawable.ed143));
+		    gOverlay.position(point,20f,18f).bearing(6f);
+		    imgOverlay=map.addGroundOverlay(gOverlay);
+		    band=false;
+		}
+		else{
+			imgOverlay.remove();
+			band=true;
+			
+		}	
+		//markerClicked = false;
+	}*/
 
 	@Override
 	public void onMapClick(LatLng point) {
@@ -228,10 +268,6 @@ public class Mapa extends Activity implements OnMapClickListener, OnMapLongClick
 		
 	}
 	
-	public void iniciaCampus(){
-		Intent intent = new Intent(this,Campus.class);
-		startActivity(intent);
-	}
 	
 	
 	

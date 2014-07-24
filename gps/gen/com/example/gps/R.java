@@ -8,6 +8,40 @@
 package com.example.gps;
 
 public final class R {
+    public static final class array {
+        public static final int admin=0x7f090010;
+        public static final int artes=0x7f090003;
+        public static final int artesEdificio=0x7f090013;
+        public static final int coordenadas=0x7f090012;
+        public static final int cultura=0x7f09000f;
+        public static final int culturaEdificio=0x7f09001f;
+        public static final int deporteEdificio=0x7f090016;
+        public static final int deportes=0x7f090006;
+        public static final int derecho=0x7f090007;
+        public static final int derechoEdificio=0x7f090017;
+        public static final int facultad=0x7f090002;
+        public static final int fca=0x7f090005;
+        public static final int fcaEdificio=0x7f090015;
+        public static final int fcqi=0x7f090004;
+        public static final int fcqiEdificio=0x7f090014;
+        public static final int feyri=0x7f090008;
+        public static final int feyriEdificio=0x7f090018;
+        public static final int ftm=0x7f09000e;
+        public static final int ftmEdificio=0x7f09001e;
+        public static final int historia=0x7f09000b;
+        public static final int historiaEdificio=0x7f09001b;
+        public static final int humanidadEdificio=0x7f090019;
+        public static final int humanidades=0x7f090009;
+        public static final int idiomas=0x7f09000a;
+        public static final int idiomasEdificio=0x7f09001a;
+        public static final int lista=0x7f090000;
+        public static final int medicina=0x7f09000d;
+        public static final int medicinaEdificio=0x7f09001d;
+        public static final int odontologia=0x7f09000c;
+        public static final int odontologiaEdificio=0x7f09001c;
+        public static final int seccion_array=0x7f090001;
+        public static final int servicio=0x7f090011;
+    }
     public static final class attr {
         /** 
     The size of the ad. It must be one of BANNER, FULL_BANNER, LEADERBOARD,
@@ -369,8 +403,8 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f090000;
-        public static final int activity_vertical_margin=0x7f090001;
+        public static final int activity_horizontal_margin=0x7f0a0000;
+        public static final int activity_vertical_margin=0x7f0a0001;
     }
     public static final class drawable {
         public static final int common_signin_btn_icon_dark=0x7f020000;
@@ -397,51 +431,114 @@ containing a value of this type.
         public static final int common_signin_btn_text_normal_light=0x7f020015;
         public static final int common_signin_btn_text_pressed_dark=0x7f020016;
         public static final int common_signin_btn_text_pressed_light=0x7f020017;
-        public static final int ed11abc=0x7f020018;
-        public static final int ed12abc=0x7f020019;
-        public static final int ed13cd14f=0x7f02001a;
-        public static final int ed14c15c=0x7f02001b;
-        public static final int ed14g=0x7f02001c;
-        public static final int ed14i=0x7f02001d;
-        public static final int ed14k=0x7f02001e;
-        public static final int ed15a=0x7f02001f;
-        public static final int ed1abcefg=0x7f020020;
-        public static final int ed2a=0x7f020021;
-        public static final int ed2d8c=0x7f020022;
-        public static final int ed3ab=0x7f020023;
-        public static final int ed3f16a14k=0x7f020024;
-        public static final int ed5abcd=0x7f020025;
-        public static final int ed6b=0x7f020026;
-        public static final int ed6c=0x7f020027;
-        public static final int ed6d=0x7f020028;
-        public static final int ed6e=0x7f020029;
-        public static final int ed6gfh=0x7f02002a;
-        public static final int ed6i=0x7f02002b;
-        public static final int ed7abc=0x7f02002c;
-        public static final int ed7e=0x7f02002d;
-        public static final int ed7e8b=0x7f02002e;
-        public static final int ed8b=0x7f02002f;
-        public static final int ed9a=0x7f020030;
-        public static final int ed9b=0x7f020031;
-        public static final int ic_launcher=0x7f020032;
-        public static final int ic_plusone_medium_off_client=0x7f020033;
-        public static final int ic_plusone_small_off_client=0x7f020034;
-        public static final int ic_plusone_standard_off_client=0x7f020035;
-        public static final int ic_plusone_tall_off_client=0x7f020036;
-        public static final int next=0x7f020037;
-        public static final int powered_by_google_dark=0x7f020038;
-        public static final int powered_by_google_light=0x7f020039;
+        public static final int ed10a=0x7f020018;
+        public static final int ed10h=0x7f020019;
+        public static final int ed11a=0x7f02001a;
+        public static final int ed11b=0x7f02001b;
+        public static final int ed11c=0x7f02001c;
+        public static final int ed11d=0x7f02001d;
+        public static final int ed12=0x7f02001e;
+        public static final int ed12a=0x7f02001f;
+        public static final int ed12b=0x7f020020;
+        public static final int ed12b1=0x7f020021;
+        public static final int ed12b2=0x7f020022;
+        public static final int ed12c=0x7f020023;
+        public static final int ed12d=0x7f020024;
+        public static final int ed12e=0x7f020025;
+        public static final int ed12f=0x7f020026;
+        public static final int ed12un=0x7f020027;
+        public static final int ed13b=0x7f020028;
+        public static final int ed13c14f=0x7f020029;
+        public static final int ed13cd14f=0x7f02002a;
+        public static final int ed13d=0x7f02002b;
+        public static final int ed142=0x7f02002c;
+        public static final int ed143=0x7f02002d;
+        public static final int ed14a=0x7f02002e;
+        public static final int ed14b=0x7f02002f;
+        public static final int ed14c=0x7f020030;
+        public static final int ed14c1=0x7f020031;
+        public static final int ed14c15c=0x7f020032;
+        public static final int ed14d=0x7f020033;
+        public static final int ed14e=0x7f020034;
+        public static final int ed14g=0x7f020035;
+        public static final int ed14h=0x7f020036;
+        public static final int ed14i=0x7f020037;
+        public static final int ed14j=0x7f020038;
+        public static final int ed14k=0x7f020039;
+        public static final int ed15a=0x7f02003a;
+        public static final int ed15b=0x7f02003b;
+        public static final int ed15c=0x7f02003c;
+        public static final int ed16a=0x7f02003d;
+        public static final int ed1a=0x7f02003e;
+        public static final int ed1b=0x7f02003f;
+        public static final int ed1c=0x7f020040;
+        public static final int ed1d=0x7f020041;
+        public static final int ed1e=0x7f020042;
+        public static final int ed1f=0x7f020043;
+        public static final int ed1g=0x7f020044;
+        public static final int ed2a=0x7f020045;
+        public static final int ed2b=0x7f020046;
+        public static final int ed2c=0x7f020047;
+        public static final int ed2d=0x7f020048;
+        public static final int ed3a=0x7f020049;
+        public static final int ed3b=0x7f02004a;
+        public static final int ed3c=0x7f02004b;
+        public static final int ed3d=0x7f02004c;
+        public static final int ed3e=0x7f02004d;
+        public static final int ed3f=0x7f02004e;
+        public static final int ed4a=0x7f02004f;
+        public static final int ed4b=0x7f020050;
+        public static final int ed4c=0x7f020051;
+        public static final int ed4d=0x7f020052;
+        public static final int ed4e=0x7f020053;
+        public static final int ed4f=0x7f020054;
+        public static final int ed5a=0x7f020055;
+        public static final int ed5abcd=0x7f020056;
+        public static final int ed5b=0x7f020057;
+        public static final int ed5c=0x7f020058;
+        public static final int ed5d=0x7f020059;
+        public static final int ed6a=0x7f02005a;
+        public static final int ed6b=0x7f02005b;
+        public static final int ed6c=0x7f02005c;
+        public static final int ed6d=0x7f02005d;
+        public static final int ed6e=0x7f02005e;
+        public static final int ed6gfh=0x7f02005f;
+        public static final int ed6i=0x7f020060;
+        public static final int ed7ab=0x7f020061;
+        public static final int ed7c=0x7f020062;
+        public static final int ed7d=0x7f020063;
+        public static final int ed7e=0x7f020064;
+        public static final int ed7f=0x7f020065;
+        public static final int ed7non=0x7f020066;
+        public static final int ed8a=0x7f020067;
+        public static final int ed8b=0x7f020068;
+        public static final int ed8c=0x7f020069;
+        public static final int ed9a=0x7f02006a;
+        public static final int ed9b=0x7f02006b;
+        public static final int ed9c=0x7f02006c;
+        public static final int edadmon=0x7f02006d;
+        public static final int edunk=0x7f02006e;
+        public static final int ic_launcher=0x7f02006f;
+        public static final int ic_plusone_medium_off_client=0x7f020070;
+        public static final int ic_plusone_small_off_client=0x7f020071;
+        public static final int ic_plusone_standard_off_client=0x7f020072;
+        public static final int ic_plusone_tall_off_client=0x7f020073;
+        public static final int powered_by_google_dark=0x7f020074;
+        public static final int powered_by_google_light=0x7f020075;
     }
     public static final class id {
-        public static final int action_settings=0x7f060017;
+        public static final int action_settings=0x7f06001c;
         public static final int book_now=0x7f060010;
+        public static final int botonAceptar=0x7f060019;
         public static final int buyButton=0x7f06000a;
         public static final int buy_now=0x7f06000f;
         public static final int buy_with_google=0x7f06000e;
-        public static final int cargar=0x7f060016;
+        public static final int cargar=0x7f06001b;
         public static final int classic=0x7f060011;
+        public static final int et_facultad=0x7f060015;
+        public static final int et_seccion=0x7f060017;
         public static final int grayscale=0x7f060012;
-        public static final int guardar=0x7f060015;
+        public static final int guardar=0x7f06001a;
         public static final int holo_dark=0x7f060005;
         public static final int holo_light=0x7f060006;
         public static final int hybrid=0x7f060004;
@@ -454,6 +551,8 @@ containing a value of this type.
         public static final int sandbox=0x7f060008;
         public static final int satellite=0x7f060002;
         public static final int selectionDetails=0x7f06000b;
+        public static final int spr_place_name=0x7f060018;
+        public static final int spr_place_type=0x7f060016;
         public static final int strict_sandbox=0x7f060009;
         public static final int terrain=0x7f060003;
         public static final int wrap_content=0x7f06000d;
@@ -467,8 +566,8 @@ containing a value of this type.
         public static final int tools=0x7f030002;
     }
     public static final class menu {
-        public static final int list_menu=0x7f0a0000;
-        public static final int main=0x7f0a0001;
+        public static final int list_menu=0x7f0b0000;
+        public static final int main=0x7f0b0001;
     }
     public static final class string {
         public static final int action_settings=0x7f040021;
@@ -568,6 +667,8 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f04001e;
+        public static final int etfacultad=0x7f040023;
+        public static final int etseccion=0x7f040024;
         public static final int hello_world=0x7f040022;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 

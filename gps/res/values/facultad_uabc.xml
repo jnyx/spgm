@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+	  <string-array name="seccion_array">
+	      <item>@array/artes</item>
+	      <item>@array/fcqi</item>
+	      <item>@array/fca</item>
+	      <item>@array/deportes</item>
+	      <item>@array/derecho</item>
+	      <item>@array/feyri</item>
+	      <item>@array/humanidades</item>
+	      <item>@array/idiomas</item>
+	      <item>@array/historia</item>
+	      <item>@array/odontologia</item>
+	      <item>@array/medicina</item>
+	      <item>@array/ftm</item>
+	      <item>@array/cultura</item>
+	      <item>@array/admin</item>
+	      <item>@array/servicio</item>
+	  </string-array>	
+    
+    
+      <string-array name="facultad">
+        <item>Artes</item>
+        <item>Ciencias Quimicas e Ingenieria</item>
+        <item>Contaduria y Administracion de Empresas</item>
+        <item>Deportes</item>        
+        <item>Derecho</item>
+        <item>Economia y Relaciones Internacionales</item>
+        <item>Humanidades y Ciencias Sociales</item>        
+        <item>Idiomas</item>
+        <item>Investigaciones Historicas</item>
+        <item>Odontologia</item>
+        <item>Medicina y Psicologia</item>
+        <item>Turismo y Mercadotecnia</item>
+        <item>Cultura y Deporte</item>
+        <item>Area Administrativa</item>
+        <item>Servicio a la Comunidad</item>
+      </string-array>
+      
+      <string-array name="artes">
+          <item>8A-Subdireccion</item>
+          <item>8A-Taller de Pintura</item>
+          <item>8A-Aulas</item>
+          <item>8B-Cursos Culturales</item>
+          <item>8C-Taller Escultorico</item>
+      </string-array>
+      
+      <string-array name="fcqi">
+          <item>6A-Direccion</item>
+          <item>6A-Laboratorios de Quimica</item>
+          <item>6A-Aulas de Clase</item>
+          <item>6B-Posgrado</item>
+          <item>6B-Laboratorios de Quimica</item>
+          <item>6C-Biotero</item>
+          <item>6C-Laboratorios de Quimica</item>
+          <item>6D-Aulas de Clase</item>
+          <item>6D-Laboratorios de Quimica</item>
+          <item>6D-Almacen de Quimica</item>
+          <item>6E-Laboratorios de Computo y Electronica</item>
+          <item>6F-Laboratorios de Ingenieria Industrial</item>
+          <item>6F-Aulas de Clase</item>
+          <item>6G-Laboratorios de Ingenieria Industrial</item>
+          <item>6G-Aulas de Clase</item>
+          <item>6H-Taller de Soldadura</item>
+          <item>6I-Aulas de Clase</item>
+      </string-array>    
+      
+      <string-array name="fca" >
+          <item >12A-Direccion</item>
+          <item >12B-Laboratorios de Computo</item>
+          <item>12C-Subdireccion</item>
+          <item >12C-Sala AudioVisual</item>
+          <item >12D-Aulas de Clase</item>
+          <item >12E-Aulas de Clase</item>
+          <item >12F-Aulas de Clase</item>
+      </string-array>
+      
+      <string-array name="deportes">
+          <item>11A-Subdireccion</item>
+          <item>11A-Medicina del Deporte</item>
+          <item>11B-Sala Audiovisual</item>
+          <item>11B-Aulas de Clase</item>
+          <item>11C-Coordinacion Deportiva</item>
+      </string-array>
+      
+      <string-array name="derecho">
+          <item>4A-Direccion</item>
+          <item>4A-Posgrado</item>
+          <item>4B-Sala de Juicios Orales</item>
+          <item>4B-Aulas de Clase</item>
+          <item>4C-Bufete Juridico</item>
+          <item>4C-Aulas de Clase</item>
+          <item>4C-Tribunal Universitario</item>
+          <item>4D-Aulas de Clase</item>
+          <item>4E-Aulas de Clase</item>
+          <item>4F-Aulas de Clase</item>
+      </string-array>
+      
+      <string-array name="feyri" >
+          <item>5A-Direccion</item>
+          <item>5B-Aulas de Clase</item>
+          <item>5C-Posgrado</item>
+          <item>5C-CIADMYPE</item>
+          <item>5D-Posgrado</item>
+          <item>5D-Laboratorios de Computo</item>
+          <item>5D-Audiovisual</item>
+      </string-array>
+      
+      <string-array name="humanidades" >
+          <item>7A-Direccion</item>
+          <item>7B-Aulas de Clase</item>
+          <item>7B-Sala AudioVisual "David Piñera"</item>
+          <item>7C-Laboratorios de Computo y Taller de Radio</item>
+          <item>7C-Taller de Fotografia</item>
+          <item>7D-Aulas de Clase</item>
+          <item>7E-Aulas de Clase</item>
+          <item>7F-Aulas de Clase</item>
+      </string-array>
+      
+      <string-array name="idiomas">
+          <item>2A-Subdireccion</item>
+          <item>2A-Posgrado</item>
+          <item>2B-Aulas de Clase</item>
+          <item>2C-CEMAI</item>
+          <item>2D-Aulas de Clase</item>
+      </string-array>
+      
+      <string-array name="historia">
+          <item>10A-Direccion</item>
+          <item>10A-Sala AudioVisual</item>
+      </string-array>
+      
+      <string-array name="odontologia">
+          <item>3A-Direccion</item>
+          <item>3A-Laboratorios</item>
+          <item>3B-Aulas de Clase</item>
+          <item>3C-Clinica Dental Infantil</item>
+          <item>3D-Administracion</item>
+          <item>3E-Clinica Dental (Trebol)</item>
+          <item>3F-Clinica Dental</item>
+          <item>3F-AudioVisual</item>
+          <item>3F-Anfiteatro</item>
+          <item>3F-Laboratorio</item>
+      </string-array>
+      
+      <string-array name="medicina">
+          <item>1A-Direccion</item>
+          <item>1A-Posgrado</item>
+          <item>1A-Aulas de Clase</item>
+          <item>1B-Aulas de Clase</item>
+          <item>1C-Aulas de Clase</item>
+          <item>1D-CUMAI</item>
+          <item>1D-Area de Simulacion</item>
+          <item>1E-Anfiteatro</item>
+          <item>1E-Zooterio</item>
+          <item>1F-Laboratorios</item>
+          <item>1G-CANDI</item>
+          <item>1G-CUAPI</item>
+      </string-array>
+      
+      <string-array name="ftm">
+          <item>9A-Direccion</item>
+          <item>9A-Aulas de Clase</item>
+          <item>9B-Sala AudioVisual</item>
+          <item>9B-Aulas de Clase</item>
+          <item>9C-CUAMI</item>
+      </string-array>
+      
+      <string-array name="cultura">
+          <item>13B-Teatro </item>
+          <item>13C-Sala de Arte</item>
+          <item>13D-Gimnasio</item>
+          <item>13E-Unidad Deportiva</item>
+      </string-array>
+      
+      <string-array name="admin">
+          <item>14A-Vicerrectoria</item>
+          <item>14B-Sindicato de Personal Universitario</item>
+          <item>14C-CAPU</item>
+          <item>14D-Area de Jardineria</item>
+          <item>14E-Centro de Computo</item>
+          <item>14F-Sala de Actualizacion Profesional Segundo Nivel</item>
+          <item>14F-Articulos Universitarios Primer Nivel</item>
+          <item>14G-Cafeteria</item>
+          <item>14H-Sala de Lecturas Segundo Nivel</item>
+          <item>14H-Sorteos Primer Nivel</item>
+          <item>14H-Tesoreria Primer Nivel</item>
+          <item>14I-Centro de Evaluacion</item>
+          <item>14J-Almacen General</item>
+          <item>14K-Almacen de Residuos</item>
+          <item>4C-Tribunal Universitario</item>
+      </string-array>
+      
+      <string-array name="servicio">
+          <item>Biblioteca</item>
+          <item>Bufete Judirico</item>
+          <item>CANDI</item>
+          <item>CUAPI</item>
+          <item>CEMAI</item>
+          <item>Coordinacion Deportiva</item>
+          <item >CUAPI</item>
+          <item>CUAMI</item>
+          <item>CUMAI</item>
+          <item>Cursos Culturales</item>
+          <item>Clinica Dental</item>
+          <item>Guarderia</item>
+          <item>UABC Radio</item>
+          <item>Locales Comerciales</item>
+      </string-array>
+      
+     <string-array name="coordenadas">
+        <item>@array/artesEdificio</item>
+        <item>@array/fcqiEdificio</item>
+        <item>@array/fcaEdificio</item>
+        <item>@array/deporteEdificio</item>
+        <item>@array/feyriEdificio</item>
+        <item>@array/humanidadEdificio</item>
+        <item>@array/idiomasEdificio</item>
+        <item>@array/historiaEdificio</item>
+        <item>@array/odontologiaEdificio</item>
+        <item>@array/medicinaEdificio</item>
+        <item>@array/ftmEdificio</item>
+        <item>@array/culturaEdificio</item>
+     </string-array> 
+     
+     <integer-array name="artesEdificio">
+         <item >@drawable/ed8a</item>
+         <item >@drawable/ed8a</item>
+         <item >@drawable/ed8a</item>
+         <item >@drawable/ed8b</item>
+         <item >@drawable/ed8c</item>
+     </integer-array>
+     
+     <integer-array name="fcqiEdificio">
+         <item >@drawable/ed6a</item>
+         <item >@drawable/ed6a</item>
+         <item >@drawable/ed6a</item>
+         <item >@drawable/ed6b</item>
+         <item >@drawable/ed6b</item>
+         <item >@drawable/ed6c</item>
+         <item >@drawable/ed6c</item>
+         <item >@drawable/ed6d</item>
+         <item >@drawable/ed6d</item>
+         <item >@drawable/ed6d</item>
+         <item >@drawable/ed6e</item>
+         <item>@drawable/ed6gfh</item>
+         <item>@drawable/ed6gfh</item>
+         <item>@drawable/ed6gfh</item>
+         <item>@drawable/ed6gfh</item>
+         <item>@drawable/ed6gfh</item>
+         <item >@drawable/ed6i</item>
+     </integer-array>
+    
+     <integer-array name="fcaEdificio">
+         <item>@drawable/ed12a</item>
+         <item>@drawable/ed12b1</item>
+         <item>@drawable/ed12c</item>
+         <item>@drawable/ed12d</item>
+         <item>@drawable/ed12e</item>
+         <item>@drawable/ed12f</item>
+     </integer-array>
+     
+     <integer-array name="deporteEdificio">
+         <item >@drawable/ed11a</item>
+         <item >@drawable/ed11a</item>
+         <item >@drawable/ed11b</item>
+         <item >@drawable/ed11c</item>
+         <item >@drawable/ed11d</item>
+     </integer-array>
+     
+     <integer-array name="derechoEdificio">
+         <item >@drawable/ed4a</item>
+         <item >@drawable/ed4a</item>
+         <item >@drawable/ed4b</item>
+         <item >@drawable/ed4b</item>
+         <item >@drawable/ed4c</item>
+         <item >@drawable/ed4c</item>
+         <item >@drawable/ed4c</item>
+         <item >@drawable/ed4d</item>
+         <item >@drawable/ed4e</item>
+         <item >@drawable/ed4f</item>
+     </integer-array>
+     
+     <integer-array name="feyriEdificio">
+         <item >@drawable/ed5a</item>
+         <item >@drawable/ed5b</item>
+         <item >@drawable/ed5c</item>
+         <item >@drawable/ed5c</item>
+         <item >@drawable/ed5d</item>
+         <item >@drawable/ed5d</item>
+         <item >@drawable/ed5d</item>
+     </integer-array>
+     
+     <integer-array name="humanidadEdificio">
+         <item>@drawable/ed7ab</item>
+         <item>@drawable/ed7ab</item>
+         <item>@drawable/ed7ab</item>
+         <item>@drawable/ed7c</item>
+         <item>@drawable/ed7c</item>
+         <item>@drawable/ed7d</item>
+         <item>@drawable/ed7d</item>
+         <item>@drawable/ed7e</item>
+         <item>@drawable/ed7f</item>
+     </integer-array>
+     
+     <integer-array name="idiomasEdificio">
+         <item>@drawable/ed2a</item>
+         <item>@drawable/ed2a</item>
+         <item>@drawable/ed2b</item>
+         <item>@drawable/ed2c</item>
+         <item>@drawable/ed2d</item>
+     </integer-array>
+     
+     <integer-array name="historiaEdificio">
+         <item>@drawable/ed10a</item>
+         <item>@drawable/ed10a</item>
+     </integer-array>
+     
+     <integer-array name="odontologiaEdificio">
+         <item>@drawable/ed3a</item>
+         <item>@drawable/ed3a</item>
+         <item>@drawable/ed3b</item>
+         <item>@drawable/ed3c</item>
+         <item>@drawable/ed3d</item>
+         <item>@drawable/ed3e</item>
+         <item>@drawable/ed3f</item>
+         <item>@drawable/ed3f</item>
+         <item>@drawable/ed3f</item>
+         <item>@drawable/ed3f</item>
+     </integer-array>
+     
+     <integer-array name="medicinaEdificio">
+         <item>@drawable/ed1a</item>
+         <item>@drawable/ed1a</item>
+         <item>@drawable/ed1a</item>
+         <item>@drawable/ed1b</item>
+         <item>@drawable/ed1c</item>
+         <item>@drawable/ed1d</item>
+         <item>@drawable/ed1d</item>
+         <item>@drawable/ed1e</item>
+         <item>@drawable/ed1e</item>
+         <item>@drawable/ed1f</item>
+         <item>@drawable/ed1g</item>
+         <item>@drawable/ed1g</item>
+     </integer-array>
+     
+     <integer-array name="ftmEdificio">
+         <item>@drawable/ed9a</item>
+         <item>@drawable/ed9a</item>
+         <item>@drawable/ed9b</item>
+         <item>@drawable/ed9b</item>
+         <item>@drawable/ed9c</item>
+     </integer-array>
+     
+     <integer-array name="culturaEdificio">
+         <item>@drawable/ed13b</item>
+         <item>@drawable/ed13c14f</item>
+         <item>@drawable/ed13d</item>
+     </integer-array>
+</resources>
